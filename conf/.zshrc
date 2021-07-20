@@ -78,9 +78,9 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -144,6 +144,7 @@ alias ytdl="youtube-dl"
 alias open='xdg-open'
 alias gpu-usage='watch -n 1 nvidia-smi'
 alias vi='vim'
+alias tor-browser='sh /opt/tor-browser_en-US/Browser/start-tor-browser &'
 
 # if [ -n "$DESKTOP_SESSION" ];then
 #     eval $(gnome-keyring-daemon --start)

@@ -185,7 +185,8 @@ bar {
 	font pango:monospace 10
 	position top #bar at the top
     status_command i3status -c ~/.config/i3/i3status.conf | /home/harshit/.config/i3/scripts/i3spotifystatus/pystatus.py
-	#status_command exec /home/harshit/.config/i3/scripts/mybar.sh
+    #status_command exec /usr/share/doc/i3status/contrib/net-speed.sh
+	#status_command exec ~/.config/i3/scripts/net-speed.sh
 }
 
 
@@ -219,12 +220,18 @@ exec xset m 22/10 0
 # gnome-keyring-daemon
 #exec gnome-keyring-daemon
 
-
 # picom
 exec picom --config ~/.config/picom/picom.conf
 
 # flameshot
 bindsym $mod1+Shift+4 exec --no-startup-id flameshot gui
+
+# hybrid graphics
+exec --no-startup-id optimus-manager --switch hybrid
+
+# xfce4-power-manager
+
+exec --no-startup-id sleep 3 &amp;&amp; xfce4-power-manager
 
 # shutdown / restart / suspend...
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (CTRL+s) shutdown
@@ -243,5 +250,3 @@ mode "$mode_system" {
 }
 
 bindsym $mod+BackSpace mode "$mode_system"
-
-#exec --no-startup-id xfsettingsd
