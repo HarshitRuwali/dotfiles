@@ -145,11 +145,9 @@ alias open='xdg-open'
 alias gpu-usage='watch -n 1 nvidia-smi'
 alias vi='vim'
 alias tor-browser='sh /opt/tor-browser_en-US/Browser/start-tor-browser &'
+alias brightness='sh ~/.config/i3/scripts/brightness.sh'
+alias vmware-player='/usr/bin/vmplayer'
 
-# if [ -n "$DESKTOP_SESSION" ];then
-#     eval $(gnome-keyring-daemon --start)
-#     export SSH_AUTH_SOCK
-# fi
 
 eval $(keychain --eval ssh_garuda)
 clear
