@@ -195,7 +195,7 @@ bar {
 exec --no-startup-id feh --no-fehbg --bg-fill '/home/harshit/Pictures/wp1810626-mr-robot-wallpapers.png'
 
 # Lock Screen
-set $i3lockwall bash ~/.config/i3/scripts/lock.sh
+set $i3lockwall /usr/bin/i3lock-fancy-dualmonitor
 bindsym $mod+Ctrl+Shift+l exec ----no-startup-id SDL_VIDEO_FULLSCREEN_HEAD=0 $i3lockwall
 
 # configure the displays (use arandr to get the config)
@@ -232,6 +232,9 @@ exec_always --no-startup-id xfce4-power-manager
 
 # clipman support
 exec --no-startup-id xfce4-clipman
+
+# bluetooth manager
+exec --no-startup-id blueman-applet
 
 # shutdown / restart / suspend...
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (CTRL+s) shutdown

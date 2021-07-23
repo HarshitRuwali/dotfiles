@@ -3,14 +3,17 @@
 My dotfiles mainly for i3 setup. 
 
 
-![desktop-env-i3](./images/2021-07-18_12-31.png)
+![desktop-env-i3](./images/display.png)
 
 
 ## Setting up a fresh environment 
 
-If you are on a Arch Based system like [Garuda Linux](https://garudalinux.org/), [Manjaro](https://manjaro.org/), [ArcoLinux](https://arcolinux.com/)... then just run the setup.sh script. 
+If you are on a [Arch](https://archlinux.org/) or Arch Based system like [Garuda Linux](https://garudalinux.org/), [Manjaro](https://manjaro.org/), [ArcoLinux](https://arcolinux.com/)... then just run the setup.sh script. 
 
 You will be prompted for the passwod to install the necessary packages. And dont run the script as `root` otherwise the config files will be placed on the root's home directory.
+
+
+Mod Key is Windows/Super.
 
 
 Picom/Compton:
@@ -19,4 +22,6 @@ Picom/Compton:
 
 ## Ref's:
   - Shows current track playing on Spotify -> [https://github.com/rpieja/i3spotifystatus](https://github.com/rpieja/i3spotifystatus)
+
+  - i3 lock for Dual-Display -> [https://github.com/meskarune/i3lock-fancy/tree/dualmonitors](https://github.com/meskarune/i3lock-fancy/tree/dualmonitors)
 
