@@ -231,6 +231,10 @@ exec --no-startup-id optimus-manager --switch hybrid
 # xfce4-power-manager
 exec_always --no-startup-id xfce4-power-manager
 
+# lock/suspend after inactivity
+# exec_always xautolock -time 5 -locker ~/.config/i3/scripts/i3lock-multimonitor/lock &
+# exec xautolock -time 7 -locker "$i3lockwall && systemctl suspend"
+
 # clipman support
 exec --no-startup-id xfce4-clipman
 
@@ -243,8 +247,8 @@ set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) re
 mode "$mode_system" {
     bindsym l exec --no-startup-id $i3lockwall, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Ctrl+s exec --no-startup-id systemctl poweroff -i, mode "default"
 

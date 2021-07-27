@@ -17,7 +17,7 @@ Mod Key is Windows/Super.
 
 
 Picom/Compton:
- - I on Arch Based system so for me its Picom. And for Debian based system is Compton.
+ - I am on Arch Based system so for me its Picom. And for Debian based system is Compton.
  
 
 ## Ref's:

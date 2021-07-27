@@ -6,11 +6,11 @@ if [ -f "/etc/arch-release" ]; then
 	echo "[+] You are on Arch or Arch based system"
 	echo "[+] Installing only core and mandetory packages"
 	echo "[+] You will be prompted for the password for the installation"
-	sudo pacaman -S i3-wm i3lock i3status alacritty picom ttf-font-awesome feh arandr optimus-manager lxappearance
+	sudo pacaman -S i3-wm i3lock i3status alacritty picom ttf-font-awesome feh arandr optimus-manager lxappearance imagemagick
 else
 	echo "[!] You are not on Arch or Arch based system"
 	echo "[!] You have install packages manually"
-	echo "[+] You might want to install the following packages: i3-wm, i3lock, i3status, alacritty, picom, ttf-font-awesome, feh, arandr, optimus-manager, lxappearance"		
+	echo "[+] You might want to install the following packages: i3-wm, i3lock, i3status, alacritty, picom, ttf-font-awesome, feh, arandr, optimus-manager, lxappearance, imagemagick"		
 fi
 
 echo "[+] Copying the config files"
