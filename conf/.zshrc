@@ -144,7 +144,7 @@ alias ytdl="youtube-dl"
 alias open='xdg-open'
 alias gpu-usage='watch -n 1 nvidia-smi'
 alias vi='vim'
-alias tor-browser='sh /opt/tor-browser_en-US/Browser/start-tor-browser &'
+alias tor-browser='/opt/tor-browser_en-US/Browser/start-tor-browser --detach'
 alias brightness='sh ~/.config/i3/scripts/brightness.sh'
 alias vmware-player='/usr/bin/vmplayer'
 

@@ -17,7 +17,9 @@ Mod Key is Windows/Super.
 
 ### power-manager/lock-screen
 
-Initiall I was using 'xautolock' to auto-lock the screen and to put the system to sleep. But its was not good enough for me, as its locks the screen when I was using VLC and some other apps which prevents screen to lock. So I switched to the previous manger(xfce4-power-manger). 
+Initiall I was using 'xautolock' to auto-lock the screen and to put the system to sleep. But its was not good enough for me, as its locks the screen when I was using VLC and some other apps which prevents screen to lock. So I switched to the previous manger(xfce4-power-manger). And I am using xfce4-screensaver to lock my screen as it turns off from the xfce4-power-manger.
+
+It just work so fine for me.
  
 
 
