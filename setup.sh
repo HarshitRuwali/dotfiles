@@ -11,7 +11,7 @@ if [ -f "/etc/arch-release" ]; then
 	echo -e "${GREEN}[+]${NC} You are on Arch or Arch based system"
 	echo -e "${GREEN}[+]${NC} Installing only core and mandetory packages"
 	echo -e "${GREEN}[+]${NC} You will be prompted for the password for the installation"
-	sudo pacman -S i3-wm i3lock i3status alacritty picom ttf-font-awesome feh arandr pasystray optimus-manager lxappearance imagemagick xfce4-power-manger xfce4-screensaver xfce4-clipman
+	sudo pacman -S i3-wm i3lock i3status alacritty picom ttf-font-awesome feh arandr pasystray optimus-manager lxappearance imagemagick xfce4-power-manger xfce4-screensaver xfce4-clipman light-locker
 	echo -e "${GREEN}[+]${NC} Copying the config files"
 	mkdir -p "$HOME"/.config/{i3,picom,alacritty}
 	cp -r conf/i3/* "$HOME"/.config/i3/
@@ -33,7 +33,7 @@ if [ -f "/etc/arch-release" ]; then
 else
 	echo -e "${BLUE}[!]${NC} You are not on Arch or Arch based system"
 	echo -e "${BLUE}[!]${NC} You have install packages manually"
-	echo -e "${GREEN}[+]${NC} You might want to install the following packages: i3-wm, i3lock, i3status, alacritty, picom, ttf-font-awesome, feh, arandr, pasystray, optimus-manager, lxappearance, imagemagick, xfce4-power-manger, xfce4-screensaver, xfce4-clipman."
+	echo -e "${GREEN}[+]${NC} You might want to install the following packages: i3-wm, i3lock, i3status, alacritty, picom, ttf-font-awesome, feh, arandr, pasystray, optimus-manager, lxappearance, imagemagick, xfce4-power-manger, xfce4-screensaver, xfce4-clipman, light-locker."
 	read -p "${RED}[?]${NC} Still copy the config files? [Y/n]" response
 	if [[ $response = Y ]]; then
 		echo -e "${GREEN}[+]${NC} Copying the config files"

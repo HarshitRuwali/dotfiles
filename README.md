@@ -12,7 +12,7 @@ If you are on [Arch](https://archlinux.org/) or Arch Based Distro like [Garuda L
 
 You will be prompted for the passwod to install the necessary packages. And dont run the script as `root` otherwise the config files will be placed on the root's home directory.
 
-And if you are not on Arch Based Distro, then it will promt you the necessary packages which needs to be installed and will ask to weather to copy the config files or not.
+And if you are not on Arch Based Distro, then it will prompt you the necessary packages which needs to be installed and will ask to weather to copy the config files or not.
 
 ### Mod Key
 
