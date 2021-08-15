@@ -22,7 +22,7 @@ Mod1($mod1) Key is Alt.
 ### power-manager/lock-screen
 
 Initiall I was using 'xautolock' to auto-lock the screen and to put the system to sleep. But its was not good enough for me, as its locks the screen when I was using VLC and some other apps which prevents screen to lock. So I switched to the previous manger(xfce4-power-manger). 
-And I am using xfce4-screensaver to lock my screen as they share the same configs, so if the screen is going to turn off from the xfce4-power-manger settings xfce4-screensaver locks it.
+I am using light-locker to lock the system with the default greeter and caffeine to disable screen-timout for certain apps(vlc & mpv..).
 
 It just works so fine for me.
  

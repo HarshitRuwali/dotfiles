@@ -245,6 +245,9 @@ exec blueman-applet
 # tor-browser key binding
 bindsym $mod+Shift+T exec /opt/tor-browser_en-US/Browser/start-tor-browser --detach
 
+# caffeine
+exec --no-startup-id caffeine
+
 # light-locker
 exec_always --no-startup-id /usr/bin/light-locker
 

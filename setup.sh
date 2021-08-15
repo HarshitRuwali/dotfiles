@@ -11,7 +11,7 @@ if [ -f "/etc/arch-release" ]; then
 	echo -e "${GREEN}[+]${NC} You are on Arch or Arch based system"
 	echo -e "${GREEN}[+]${NC} Installing only core and mandetory packages"
 	echo -e "${GREEN}[+]${NC} You will be prompted for the password for the installation"
-	sudo pacman -S i3-wm i3lock i3status alacritty picom ttf-font-awesome feh arandr pasystray optimus-manager lxappearance imagemagick xfce4-power-manger xfce4-screensaver xfce4-clipman light-locker
+	sudo pacman -S i3-wm i3lock i3status alacritty picom ttf-font-awesome feh arandr pasystray optimus-manager lxappearance imagemagick xfce4-power-manger xfce4-clipman light-locker caffeine-ng
 	echo -e "${GREEN}[+]${NC} Copying the config files"
 	mkdir -p "$HOME"/.config/{i3,picom,alacritty}
 	cp -r conf/i3/* "$HOME"/.config/i3/
@@ -29,11 +29,11 @@ if [ -f "/etc/arch-release" ]; then
 	fi
 	echo -e "${GREEN}[+]${NC} Done!"
 	echo -e "${GREEN}[+]${NC} Re-Boot"
-	echo -e "${GREEN}[+]${NC} After reboot: : Select i3 on login, run lxappearance and select the theme to match the your system and xfce4-power-manger-settings to set the screen timeout and sleep settings. Also xfce4-screensaver-preferences to set the lock screen."
+	echo -e "${GREEN}[+]${NC} After reboot: : Select i3 on login, run lxappearance and select the theme to match the your system and xfce4-power-manger-settings to set the screen timeout and sleep settings. Use caffeine to disable screen-timout for certain apps."
 else
 	echo -e "${BLUE}[!]${NC} You are not on Arch or Arch based system"
 	echo -e "${BLUE}[!]${NC} You have install packages manually"
-	echo -e "${GREEN}[+]${NC} You might want to install the following packages: i3-wm, i3lock, i3status, alacritty, picom, ttf-font-awesome, feh, arandr, pasystray, optimus-manager, lxappearance, imagemagick, xfce4-power-manger, xfce4-screensaver, xfce4-clipman, light-locker."
+	echo -e "${GREEN}[+]${NC} You might want to install the following packages: i3-wm, i3lock, i3status, alacritty, picom, ttf-font-awesome, feh, arandr, pasystray, optimus-manager, lxappearance, imagemagick, xfce4-power-manger, xfce4-clipman, light-locker, caffeine-ng."
 	read -p "${RED}[?]${NC} Still copy the config files? [Y/n]" response
 	if [[ $response = Y ]]; then
 		echo -e "${GREEN}[+]${NC} Copying the config files"
