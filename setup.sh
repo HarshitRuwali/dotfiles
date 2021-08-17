@@ -20,7 +20,7 @@ if [ -f "/etc/arch-release" ]; then
 	echo -e "${RED}[?]${NC} Copy the zsh config file (.zshrc)?"
 	echo -e "${BLUE}[!]${NC} You will need to manually install and configure Oh-My-Zsh, Powerlevel10k and zsh-autosuggestions. [Y/n] " 
 	read response
-	if [[ $response = Y ]] || [$response = y]] ; then
+	if [[ $response = Y ]] || [[ $response = y ]] ; then
 		echo -e "${GREEN}[+]${NC} Copying the zshrc file"
 		mv "$HOME"/.zshrc "$HOME"/.zshrc.bak
 		cp  conf/.zshrc "$HOME"/.zshrc
@@ -36,7 +36,7 @@ else
 	echo -e "${BLUE}[!]${NC} You have install packages manually"
 	echo -e "${GREEN}[+]${NC} You might want to install the following packages: i3-wm, i3lock, i3status, dmenu, alacritty, picom, ttf-font-awesome, feh, arandr, pasystray, optimus-manager, lxappearance, imagemagick, xfce4-power-manager, xfce4-clipman-plugin, light-locker, caffeine-ng."
 	read -p "${RED}[?]${NC} Still copy the config files? [Y/n]" response
-	if [[ $response = Y ]]; then
+	if [[ $response = Y ]] || [[ $response = y]]; then
 		echo -e "${GREEN}[+]${NC} Copying the config files"
 		mkdir "$HOME"/.config/${i3,compton,alacritty}
 		cp -r conf/i3/* "$HOME"/.config/i3/
