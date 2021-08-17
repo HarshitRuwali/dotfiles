@@ -11,21 +11,22 @@ if [ -f "/etc/arch-release" ]; then
 	echo -e "${GREEN}[+]${NC} You are on Arch or Arch based system"
 	echo -e "${GREEN}[+]${NC} Installing only core and mandetory packages"
 	echo -e "${GREEN}[+]${NC} You will be prompted for the password for the installation"
-	sudo pacman -S i3-wm i3lock i3status alacritty picom ttf-font-awesome feh arandr pasystray optimus-manager lxappearance imagemagick xfce4-power-manger xfce4-clipman light-locker caffeine-ng
+	sudo pacman -S i3-wm i3lock i3status dmenu alacritty picom ttf-font-awesome feh arandr pasystray optimus-manager lxappearance imagemagick xfce4-power-manager xfce4-clipman-plugin light-locker caffeine-ng
 	echo -e "${GREEN}[+]${NC} Copying the config files"
 	mkdir -p "$HOME"/.config/{i3,picom,alacritty}
 	cp -r conf/i3/* "$HOME"/.config/i3/
 	cp -r conf/picom/* "$HOME"/.config/picom/
 	cp -r conf/alacritty/* "$HOME"/.config/alacritty/
 	echo -e "${RED}[?]${NC} Copy the zsh config file (.zshrc)?"
-	read -p "${BLUE}[!]${NC} You will need to manually install and configure Oh-My-Zsh, Powerlevel10k and zsh-autosuggestions. [Y/n] " response
-	if [[ $response = Y ]]; then
+	echo -e "${BLUE}[!]${NC} You will need to manually install and configure Oh-My-Zsh, Powerlevel10k and zsh-autosuggestions. [Y/n] " 
+	read response
+	if [[ $response = Y ]] || [$response = y]] ; then
 		echo -e "${GREEN}[+]${NC} Copying the zshrc file"
 		mv "$HOME"/.zshrc "$HOME"/.zshrc.bak
 		cp  conf/.zshrc "$HOME"/.zshrc
 	else
 		echo -e "${BLUE}[!]${NC} Skipping"
-		exit 0;
+		break
 	fi
 	echo -e "${GREEN}[+]${NC} Done!"
 	echo -e "${GREEN}[+]${NC} Re-Boot"
@@ -33,7 +34,7 @@ if [ -f "/etc/arch-release" ]; then
 else
 	echo -e "${BLUE}[!]${NC} You are not on Arch or Arch based system"
 	echo -e "${BLUE}[!]${NC} You have install packages manually"
-	echo -e "${GREEN}[+]${NC} You might want to install the following packages: i3-wm, i3lock, i3status, alacritty, picom, ttf-font-awesome, feh, arandr, pasystray, optimus-manager, lxappearance, imagemagick, xfce4-power-manger, xfce4-clipman, light-locker, caffeine-ng."
+	echo -e "${GREEN}[+]${NC} You might want to install the following packages: i3-wm, i3lock, i3status, dmenu, alacritty, picom, ttf-font-awesome, feh, arandr, pasystray, optimus-manager, lxappearance, imagemagick, xfce4-power-manager, xfce4-clipman-plugin, light-locker, caffeine-ng."
 	read -p "${RED}[?]${NC} Still copy the config files? [Y/n]" response
 	if [[ $response = Y ]]; then
 		echo -e "${GREEN}[+]${NC} Copying the config files"
@@ -42,8 +43,9 @@ else
 		cp -r conf/picom/* "$HOME"/.config/compton/
 		cp -r conf/alacritty/* "$HOME"/.config/alacritty/
 		echo -e "${RED}[?]${NC} Copy the zsh config file (.zshrc)?"
-		read -p "${BLUE}[!]${NC} You will need to manually install and configure Oh-My-Zsh, Powerlevel10k and zsh-autosuggestions. [Y/n]" response
-		if [[ $response = Y ]]; then
+		echo -e "${BLUE}[!]${NC} You will need to manually install and configure Oh-My-Zsh, Powerlevel10k and zsh-autosuggestions. [Y/n]" 
+		read response
+		if [[ $response = Y ]] || [[$response = y]]; then
 			echo -e "${GREEN}[+] Copying the zshrc file"
 			mv "$HOME"/.zshrc "$HOME"/.zshrc.bak
 			cp  conf/.zshrc "$HOME"/.zshrc
