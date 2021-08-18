@@ -28,7 +28,18 @@ if [ -f "/etc/arch-release" ]; then
 		echo -e "${BLUE}[!]${NC} Skipping"
 		break
 	fi
-	echo -e "${GREEN}[+]${NC} Done!"
+	
+	echo -e "${RED}[?]${NC} Copy the tmux config file? For using tmux when not on i3"
+	read response
+	if [[ $response = Y ]] || [[ $response = y ]] ; then
+    	echo -e "${GREEN}[+]${NC} Copying the tmux conf file"
+    	mv "$HOME"/.tumx.conf "$HOME"/.tumx.conf.bak
+		cp  conf/.tumx.conf "$HOME"/.tumx.conf
+    else
+		echo -e "${BLUE}[!]${NC} Skipping"
+    	break
+	fi
+
 	echo -e "${GREEN}[+]${NC} Re-Boot"
 	echo -e "${GREEN}[+]${NC} After reboot: : Select i3 on login, run lxappearance and select the theme to match the your system and xfce4-power-manger-settings to set the screen timeout and sleep settings. Use caffeine to disable screen-timout for certain apps."
 else
@@ -36,7 +47,7 @@ else
 	echo -e "${BLUE}[!]${NC} You have install packages manually"
 	echo -e "${GREEN}[+]${NC} You might want to install the following packages: i3-wm, i3lock, i3status, dmenu, alacritty, picom, ttf-font-awesome, feh, arandr, pasystray, optimus-manager, lxappearance, imagemagick, xfce4-power-manager, xfce4-clipman-plugin, light-locker, caffeine-ng."
 	read -p "${RED}[?]${NC} Still copy the config files? [Y/n]" response
-	if [[ $response = Y ]] || [[ $response = y]]; then
+	if [[ $response = Y ]] || [[ $response = y ]]; then
 		echo -e "${GREEN}[+]${NC} Copying the config files"
 		mkdir "$HOME"/.config/${i3,compton,alacritty}
 		cp -r conf/i3/* "$HOME"/.config/i3/
@@ -45,7 +56,7 @@ else
 		echo -e "${RED}[?]${NC} Copy the zsh config file (.zshrc)?"
 		echo -e "${BLUE}[!]${NC} You will need to manually install and configure Oh-My-Zsh, Powerlevel10k and zsh-autosuggestions. [Y/n]" 
 		read response
-		if [[ $response = Y ]] || [[$response = y]]; then
+		if [[ $response = Y ]] || [[$response = y ]]; then
 			echo -e "${GREEN}[+] Copying the zshrc file"
 			mv "$HOME"/.zshrc "$HOME"/.zshrc.bak
 			cp  conf/.zshrc "$HOME"/.zshrc

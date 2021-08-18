@@ -140,7 +140,7 @@ PATH=$PATH:/home/harshit/.local/bin
 
 alias rpi="ssh pi@192.168.1.103"
 alias clr="clear"
-alias ytdl="youtube-dl"
+alias ytdl="youtube-dl -o '%(title)s.%(ext)s'"
 alias open='xdg-open'
 alias gpu-usage='watch -n 1 nvidia-smi'
 alias vi='vim'

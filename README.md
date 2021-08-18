@@ -8,11 +8,13 @@ My dotfiles mainly for i3 setup, with Picom and Alacritty.
 
 ## Setting up a fresh environment 
 
-If you are on [Arch](https://archlinux.org/) or Arch Based Distro like [Garuda Linux](https://garudalinux.org/), [Manjaro](https://manjaro.org/), [ArcoLinux](https://arcolinux.com/)... then just run the setup.sh script. 
+Run the setup.sh file.  
 
-You will be prompted for the passwod to install the necessary packages. And dont run the script as `root` otherwise the config files will be placed on the root's home directory.
+And if you are on [Arch](https://archlinux.org/) or Arch Based Distro like [Garuda Linux](https://garudalinux.org/), [Manjaro](https://manjaro.org/), [ArcoLinux](https://arcolinux.com/)....then you will be prompted for the password to install the necessary packages. And will copy the config files. 
 
-And if you are not on Arch Based Distro, then it will prompt you the necessary packages which needs to be installed and will ask to weather to copy the config files or not.
+And if you are not on Arch Based Distro, then it will prompt you the necessary packages which needs to be installed and will ask to copy the config files or not.
+
+And dont run the script as `root` otherwise the config files will be placed on the root's home directory.
 
 ### Mod Key
 
