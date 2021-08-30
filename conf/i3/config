@@ -193,7 +193,7 @@ bar {
 
 # background
 #exec --no-startup-id feh --no-fehbg --bg-fill '/usr/share/wallpapers/garuda-wallpapers/Dragon.png'
-exec --no-startup-id feh --no-fehbg --bg-fill '/home/harshit/Pictures/wp1810626-mr-robot-wallpapers.png'
+exec --no-startup-id feh --no-fehbg --bg-fill '/usr/share/blackarch/artwork/wallpaper/wallpaper-cyberpunk.png'
 
 # Lock Screen
 #set $i3lockwall bash ~/.config/i3/scripts/lock.sh
@@ -227,7 +227,8 @@ exec picom --config ~/.config/picom/picom.conf
 bindsym $mod1+Shift+4 exec --no-startup-id flameshot gui
 
 # hybrid graphics
-exec --no-startup-id optimus-manager --switch hybrid
+#exec --no-startup-id optimus-manager --switch hybrid
+exec optimus-manager-qt
 
 # xfce4-power-manager
 exec_always --no-startup-id xfce4-power-manager

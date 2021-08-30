@@ -11,7 +11,10 @@ if [ -f "/etc/arch-release" ]; then
 	echo -e "${GREEN}[+]${NC} You are on Arch or Arch based system"
 	echo -e "${GREEN}[+]${NC} Installing only core and mandetory packages"
 	echo -e "${GREEN}[+]${NC} You will be prompted for the password for the installation"
-	sudo pacman -S i3-wm i3lock i3status dmenu alacritty picom ttf-font-awesome feh arandr pasystray optimus-manager lxappearance imagemagick xfce4-power-manager xfce4-clipman-plugin light-locker caffeine-ng
+	sudo pacman -S i3-wm i3lock i3status dmenu alacritty picom ttf-font-awesome feh arandr pasystray optimus-manager optimus-manager-qt lxappearance imagemagick xfce4-power-manager xfce4-clipman-plugin light-locker
+	echo -e "${BLUE}[!]${NC} Use the caffeine-ng from the Aur(aur/caffeine-ng). It provides the tray icon for manual overriding."
+	yay caffeine-ng
+	echo -e "${GREEN}[+]${NC} Installation finished!"
 	echo -e "${GREEN}[+]${NC} Copying the config files"
 	mkdir -p "$HOME"/.config/{i3,picom,alacritty}
 	cp -r conf/i3/* "$HOME"/.config/i3/
@@ -45,7 +48,7 @@ if [ -f "/etc/arch-release" ]; then
 else
 	echo -e "${BLUE}[!]${NC} You are not on Arch or Arch based system"
 	echo -e "${BLUE}[!]${NC} You have install packages manually"
-	echo -e "${GREEN}[+]${NC} You might want to install the following packages: i3-wm, i3lock, i3status, dmenu, alacritty, picom, ttf-font-awesome, feh, arandr, pasystray, optimus-manager, lxappearance, imagemagick, xfce4-power-manager, xfce4-clipman-plugin, light-locker, caffeine-ng."
+	echo -e "${GREEN}[+]${NC} You might want to install the following packages: i3-wm, i3lock, i3status, dmenu, alacritty, picom, ttf-font-awesome, feh, arandr, pasystray, optimus-manager, optimus-manager-qt, lxappearance, imagemagick, xfce4-power-manager, xfce4-clipman-plugin, light-locker, caffeine-ng."
 	read -p "${RED}[?]${NC} Still copy the config files? [Y/n]" response
 	if [[ $response = Y ]] || [[ $response = y ]]; then
 		echo -e "${GREEN}[+]${NC} Copying the config files"
