@@ -20,6 +20,8 @@ if [ -f "/etc/arch-release" ]; then
 	cp -r conf/i3/* "$HOME"/.config/i3/
 	cp -r conf/picom/* "$HOME"/.config/picom/
 	cp -r conf/alacritty/* "$HOME"/.config/alacritty/
+	echo -e "${GREEN}[+]${NC} Copying the dmenu config file"
+	sudo cp conf/dmenu_run /usr/bin/dmenu_run
 	echo -e "${RED}[?]${NC} Copy the zsh config file (.zshrc)?"
 	echo -e "${BLUE}[!]${NC} You will need to manually install and configure Oh-My-Zsh, Powerlevel10k and zsh-autosuggestions. [Y/n] " 
 	read response

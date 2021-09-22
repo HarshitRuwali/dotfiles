@@ -16,6 +16,8 @@ And if you are not on Arch Based Distro, then it will prompt you the necessary p
 
 And dont run the script as `root` otherwise the config files will be placed on the root's home directory.
 
+And for wallpaper you have to manually pass the file location in the config file.
+
 ### Mod Key
 
 Mod($mod) Key is Windows/Super.
