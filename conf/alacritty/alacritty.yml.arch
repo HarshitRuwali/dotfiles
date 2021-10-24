@@ -63,7 +63,7 @@ window:
   #startup_mode: Windowed
 
   # Window title
-  title: Alacritty@Garuda
+  title: harshit@omen
 
   # Window class (Linux/BSD only):
   class:
@@ -89,7 +89,7 @@ scrolling:
 # Font configuration
 font:
   # Normal (roman) font face
-  size: 9
+  size: 8
   normal:
     # Font family
     #
@@ -327,9 +327,9 @@ live_config_reload: true
 # shell:
 #   program: /usr/bin/sh
 #   args:
-#     - -l
-#     - -c
-#     - "tmux"
+#   - -l
+#   - -c
+#   - "tmux"
 
 # Startup directory
 #

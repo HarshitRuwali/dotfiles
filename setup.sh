@@ -19,7 +19,7 @@ if [ -f "/etc/arch-release" ]; then
 	mkdir -p "$HOME"/.config/{i3,picom,alacritty}
 	cp -r conf/i3/* "$HOME"/.config/i3/
 	cp -r conf/picom/* "$HOME"/.config/picom/
-	cp -r conf/alacritty/* "$HOME"/.config/alacritty/
+	cp -r conf/alacritty/alacritty.yml.arch "$HOME"/.config/alacritty/alacritty.yml
 	echo -e "${GREEN}[+]${NC} Copying the dmenu config file"
 	sudo cp conf/dmenu_run /usr/bin/dmenu_run
 	echo -e "${RED}[?]${NC} Copy the zsh config file (.zshrc)?"
@@ -57,7 +57,7 @@ else
 		mkdir "$HOME"/.config/${i3,compton,alacritty}
 		cp -r conf/i3/* "$HOME"/.config/i3/
 		cp -r conf/picom/* "$HOME"/.config/compton/
-		cp -r conf/alacritty/* "$HOME"/.config/alacritty/
+		cp -r conf/alacritty/alacritty.yml.debian "$HOME"/.config/alacritty/alacritty.yml
 		echo -e "${RED}[?]${NC} Copy the zsh config file (.zshrc)?"
 		echo -e "${BLUE}[!]${NC} You will need to manually install and configure Oh-My-Zsh, Powerlevel10k and zsh-autosuggestions. [Y/n]" 
 		read response

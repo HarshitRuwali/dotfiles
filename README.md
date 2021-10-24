@@ -34,7 +34,12 @@ It just works so fine for me.
 
 Picom/Compton:
  - I am on Arch Based system so for me its Picom. And for Debian based system is Compton.
- 
+
+### Alacritty config
+
+For the Arch based system and Debian system the config differ and I have created the configs for the same. 
+And the script will copy the correct config based on the OS.
+  
 
 ## Ref's:
   - Shows current track playing on Spotify -> [https://github.com/rpieja/i3spotifystatus](https://github.com/rpieja/i3spotifystatus)
