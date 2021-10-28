@@ -11,7 +11,7 @@ if [ -f "/etc/arch-release" ]; then
 	echo -e "${GREEN}[+]${NC} You are on Arch or Arch based system"
 	echo -e "${GREEN}[+]${NC} Installing only core and mandetory packages"
 	echo -e "${GREEN}[+]${NC} You will be prompted for the password for the installation"
-	sudo pacman -S i3-wm i3lock i3status dmenu alacritty picom ttf-font-awesome feh arandr pasystray lxappearance imagemagick xfce4-power-manager xfce4-clipman-plugin light-locker
+	sudo pacman -S --needed i3-wm i3lock i3status dmenu alacritty picom ttf-font-awesome feh arandr pasystray lxappearance imagemagick xfce4-power-manager xfce4-clipman-plugin light-locker
 	# yay -S optimus-manager optimus-manager-qt
 	echo -e "${BLUE}[!]${NC} Use the caffeine-ng from the Aur(aur/caffeine-ng). It provides the tray icon for manual overriding."
 	yay caffeine-ng
