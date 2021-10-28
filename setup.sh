@@ -11,7 +11,8 @@ if [ -f "/etc/arch-release" ]; then
 	echo -e "${GREEN}[+]${NC} You are on Arch or Arch based system"
 	echo -e "${GREEN}[+]${NC} Installing only core and mandetory packages"
 	echo -e "${GREEN}[+]${NC} You will be prompted for the password for the installation"
-	sudo pacman -S i3-wm i3lock i3status dmenu alacritty picom ttf-font-awesome feh arandr pasystray optimus-manager optimus-manager-qt lxappearance imagemagick xfce4-power-manager xfce4-clipman-plugin light-locker
+	sudo pacman -S i3-wm i3lock i3status dmenu alacritty picom ttf-font-awesome feh arandr pasystray lxappearance imagemagick xfce4-power-manager xfce4-clipman-plugin light-locker
+	# yay -S optimus-manager optimus-manager-qt
 	echo -e "${BLUE}[!]${NC} Use the caffeine-ng from the Aur(aur/caffeine-ng). It provides the tray icon for manual overriding."
 	yay caffeine-ng
 	echo -e "${GREEN}[+]${NC} Installation finished!"
@@ -31,10 +32,9 @@ if [ -f "/etc/arch-release" ]; then
 		cp  conf/.zshrc "$HOME"/.zshrc
 	else
 		echo -e "${BLUE}[!]${NC} Skipping"
-		break
 	fi
 	
-	echo -e "${RED}[?]${NC} Copy the tmux config file? For using tmux when not on i3"
+	echo -e "${RED}[?]${NC} Copy the tmux config file? For using tmux when not on i3. [Y/n]"
 	read response
 	if [[ $response = Y ]] || [[ $response = y ]] ; then
     	echo -e "${GREEN}[+]${NC} Copying the tmux conf file"
@@ -42,7 +42,6 @@ if [ -f "/etc/arch-release" ]; then
 		cp  conf/.tumx.conf "$HOME"/.tumx.conf
     else
 		echo -e "${BLUE}[!]${NC} Skipping"
-    	break
 	fi
 
 	echo -e "${GREEN}[+]${NC} Re-Boot"
@@ -67,7 +66,6 @@ else
 			cp  conf/.zshrc "$HOME"/.zshrc
 		else
 			echo -e "${BLUE}[!]${NC} Skipping"
-			break
 		fi
 		echo -e "Install the above packages and reboot."
 		echo -e "After reboot: Select i3 on login, run lxappearance and select the theme to match the your system and xfce4-power-manger-settings to set the screen timeout and sleep settings. Also xfce4-screensaver-preferences to set the lock screen."
