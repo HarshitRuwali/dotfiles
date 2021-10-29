@@ -23,6 +23,33 @@ And for wallpaper you have to manually pass the file location in the config file
 Mod($mod) Key is Windows/Super.
 Mod1($mod1) Key is Alt.
 
+### Gnome-keyring & i3wm
+
+Referrnig to the Arch Wiki about the Gnome-keyring here is the fix.
+
+```
+sudo cp /etc/pam.d/login /etc/pam.d.login.bak
+sudo cp /etc/pam.d/passwd /etc/pam.d.passwd.bak
+echo "auth     optional  pam_gnome_keyring.so"$'\n'"session  optional  pam_gnome_keyring.so auto_start" | sudo tee -a /etc/pam.d/login > /dev/null
+echo "password  optional  pam_gnome_keyring.so" | sudo tee -a /etc/pam.d/passwd > /dev/null
+echo "
+if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+  eval $(dbus-launch --sh-syntax --exit-with-session)
+  export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gnupg)
+fi" >> .profile
+```
+
+This will unlock the gnome keyring. 
+
+But browsers like chromium uses gnome-keyring to save the secret phrases which unclocks your saved cookies and passwords. 
+For them doing this is not enough. There are two work arounds for this. 
+  - Make the browers use gnome keyring. Done by using the flag `--password-store=gnome`. And making it persistant by placing the flag in the `~/.congfig/$brower-flags.conf` 
+    - works for brave too
+  This will make sure in the i3wm and DE to store the cookies in keyring.   
+
+  - (NOT RECOMMENDED) Store the cookes in clear text using flag `--password-store=basic` in the primary DE by editing the launch prefernces. 
+ 
+
 ### power-manager/lock-screen
 
 Initiall I was using 'xautolock' to auto-lock the screen and to put the system to sleep. But its was not good enough for me, as its locks the screen when I was using VLC and some other apps which prevents screen to lock. So I switched to the previous manger(xfce4-power-manger). 
@@ -46,3 +73,6 @@ And the script will copy the correct config based on the OS.
 
   - i3 lock for Dual-Display -> [https://github.com/ShikherVerma/i3lock-multimonitor](https://github.com/ShikherVerma/i3lock-multimonitor)
 
+  - Gnome/Keyring Arch Wiki[https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring](https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring)
+  
+  - Chromium flag persistan [https://wiki.archlinux.org/title/Chromium#Making_flags_persistent](https://wiki.archlinux.org/title/Chromium#Making_flags_persistent)
