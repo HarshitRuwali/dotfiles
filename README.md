@@ -10,7 +10,7 @@ My dotfiles mainly for i3 setup, with Picom and Alacritty.
 
 Run the command
 ```
-curl https://raw.githubusercontent.com/HarshitRuwali/dotfiles/master/setup.sh | sh
+curl https://raw.githubusercontent.com/HarshitRuwali/dotfiles/master/install.sh | sh
 ```
 
 OR run the setup.sh file.  
@@ -78,6 +78,6 @@ And the script will copy the correct config based on the OS.
 
   - i3 lock for Dual-Display -> [https://github.com/ShikherVerma/i3lock-multimonitor](https://github.com/ShikherVerma/i3lock-multimonitor)
 
-  - Gnome/Keyring Arch Wiki[https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring](https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring)
+  - Gnome/Keyring Arch Wiki ->[https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring](https://wiki.archlinux.org/title/GNOME/Keyring#Using_the_keyring)
   
-  - Chromium flag persistan [https://wiki.archlinux.org/title/Chromium#Making_flags_persistent](https://wiki.archlinux.org/title/Chromium#Making_flags_persistent)
+  - Chromium flag persistan -> [https://wiki.archlinux.org/title/Chromium#Making_flags_persistent](https://wiki.archlinux.org/title/Chromium#Making_flags_persistent)
