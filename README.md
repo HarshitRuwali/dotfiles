@@ -8,7 +8,12 @@ My dotfiles mainly for i3 setup, with Picom and Alacritty.
 
 ## Setting up a fresh environment 
 
-Run the setup.sh file.  
+Run the command
+```
+curl https://raw.githubusercontent.com/HarshitRuwali/dotfiles/master/setup.sh | sh
+```
+
+OR run the setup.sh file.  
 
 And if you are on [Arch](https://archlinux.org/) or Arch Based Distro like [Garuda Linux](https://garudalinux.org/), [Manjaro](https://manjaro.org/), [ArcoLinux](https://arcolinux.com/)....then you will be prompted for the password to install the necessary packages. And will copy the config files. 
 
