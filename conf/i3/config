@@ -42,7 +42,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -183,6 +184,7 @@ bar {
     position top #bar at the top
     tray_output primary
     status_command i3status -c ~/.config/i3/i3status.conf | /home/harshit/.config/i3/scripts/i3spotifystatus/pystatus.py
+    #status_command py3status -c ~/.config/i3/i3status.conf
 }
 
 
@@ -193,7 +195,7 @@ bar {
 
 # background
 #exec --no-startup-id feh --no-fehbg --bg-fill '/usr/share/wallpapers/garuda-wallpapers/Dragon.png'
-exec --no-startup-id feh --no-fehbg --bg-fill '/usr/share/blackarch/artwork/wallpaper/wallpaper-cyberpunk.png'
+exec --no-startup-id feh --no-fehbg --bg-fill '/usr/share/backgrounds/archlinux/archwave.png'
 
 # Lock Screen
 #set $i3lockwall bash ~/.config/i3/scripts/lock.sh
@@ -201,15 +203,16 @@ set $i3lockwall bash ~/.config/i3/scripts/i3lock-multimonitor/lock
 bindsym $mod+Ctrl+Shift+l exec $i3lockwall
 
 # configure the displays (use arandr to get the config)
-exec xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1-0 --off --output DP-1-1 --off --output HDMI-1-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1-2 --off --output DP-1-3 --off
+#exec xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1-0 --off --output DP-1-1 --off --output HDMI-1-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1-2 --off --output DP-1-3 --off
+#exec xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-1-0 --off --output DP-1-1 --off --output HDMI-1-0 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1-2 --off --output DP-1-3 --off
 
 # multi-media keys
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
 # trackpad speed
 exec xset m 22/10 0
@@ -231,7 +234,7 @@ bindsym $mod1+Shift+4 exec --no-startup-id flameshot gui
 exec optimus-manager-qt
 
 # xfce4-power-manager
-exec_always --no-startup-id xfce4-power-manager
+#exec_always --no-startup-id xfce4-power-manager
 
 # lock/suspend after inactivity
 # exec_always xautolock -time 5 -locker ~/.config/i3/scripts/i3lock-multimonitor/lock &
@@ -250,16 +253,32 @@ bindsym $mod+Shift+T exec /opt/tor-browser_en-US/Browser/start-tor-browser --det
 exec --no-startup-id caffeine
 
 # light-locker
-exec_always --no-startup-id /usr/bin/light-locker
+#exec_always --no-startup-id /usr/bin/light-locker
+
+# powertop-fix
+exec sudo ~/.local/bin/powertop-fix
+
+# keepassxc
+exec keepassxc
+
+# redshift
+exec /usr/lib/geoclue-2.0/demos/agent
+exec redshift-gtk
+
+# spotify window
+exec python3 /home/harshit/Developer/spotify-adblock-linux/adspotter
+for_window [class="Spotify"] move container to workspace $ws10
+
+# bluetooth off
+exec rfkill bluetooth 
 
 # shutdown / restart / suspend...
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (CTRL+s) shutdown
 
 mode "$mode_system" {
-    bindsym l exec --no-startup-id light-locker-command -l
+    bindsym l exec --no-startup-id $i3lockwall, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Ctrl+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
